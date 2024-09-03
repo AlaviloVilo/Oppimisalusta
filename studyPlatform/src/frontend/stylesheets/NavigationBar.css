@@ -1,0 +1,82 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0B981E;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents overflowing content */
+  height: 5vh;
+}
+
+.navbar-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.navbar-tabs {
+  display: flex;
+  margin-left: 20px;
+  flex-grow: 1;
+  overflow: hidden; /* Prevents overflowing content */
+}
+
+.navbar-tab {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.navbar-tab:hover {
+  text-decoration: underline;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the search and login elements to the right */
+}
+
+.navbar-search {
+  padding: 5px;
+  font-size: 1em;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevents shrinking of the search input */
+}
+
+.navbar-login {
+  padding: 5px 10px;
+  font-size: 1em;
+  color: white;
+  background-color: #1B822C;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents shrinking of the login button */
+}
+
+.navbar-login:hover {
+  background-color: #19b833;
+}
+
+.content {
+  padding-top: 60px; /* Adjust this value to match the height of your navbar */
+}
