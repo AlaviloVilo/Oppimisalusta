@@ -28,7 +28,7 @@ export default function Footer() {
                 <InstagramIcon style={{ color: 'white', fontSize: "1.5em" }} />
                 <LinkedInIcon style={{ color: 'white', fontSize: "1.5em" }} />
             </Box>
-            <Box sx={{ flexGrow: 1, textAlign: 'center', fontSize: "1.5em" }}>
+            <Box sx={{ flexGrow: 1, textAlign: 'center', fontSize: "1.2em" }}>
                 <a href="/yhteystiedot" style={{ color: 'white', textDecoration: 'none', margin: '0 20px' }}>Yhteystiedot</a>
                 <a href="/tietosuojakaytanto" style={{ color: 'white', textDecoration: 'none', margin: '0 20px' }}>Tietosuojakäytäntö</a>
                 <a href="/copyright" style={{ color: 'white', textDecoration: 'none', margin: '0 20px' }}>Copyright</a>
@@ -36,3 +36,4 @@ export default function Footer() {
         </Box>
     )
 }
+
