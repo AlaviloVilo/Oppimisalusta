@@ -14,7 +14,7 @@ jobs:
       uses: AlaviloVilo/checkout@v2  # Update to your forked repository
 
     - name: Set up Docker Buildx
-      uses: AlaviloVilo/setup-buildx-action  # Update to your forked repository
+      uses: AlaviloVilo/setup-buildx-action@v1  # Update to your forked repository
 
     - name: Log in to Docker Hub
       uses: AlaviloVilo/login-action@v1  # Update to your forked repository
@@ -26,4 +26,4 @@ jobs:
       uses: AlaviloVilo/build-push-action@v2  # Update to your forked repository
       with:
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/your-app-name:latest  # Update to your Docker Hub repository name
+        tags: ${{ secrets.DOCKER_USERNAME }}/vilo:latest  # Update to your Docker Hub repository name
