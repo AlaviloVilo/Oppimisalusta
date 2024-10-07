@@ -17,4 +17,4 @@ EXPOSE 5173
 EXPOSE 3000
 
 # Define the command to run the app
-CMD ["npm", "start"]
+CMD ["npx", "concurrently", "\"node app.js\"", "\"npm run dev\""]
