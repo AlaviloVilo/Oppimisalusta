@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "concurrently \"node app.js\" \"npm run dev\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -15,6 +16,7 @@
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
+    "concurrently": "^9.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
