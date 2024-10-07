@@ -12,7 +12,7 @@ const addNewsCard = async () => {
   const newNewsCard = new NewsCard({
     refCourse: null,
     newsTitle: 'For Testing!!',
-    message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quia aperiam ipsam placeat beatae modi? Fugit odit iusto deserunt facere cumque sint animi eius nostrum vel, magnam exercitationem repellat? Ut?",
+    message: "L3orem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quia aperiam ipsam placeat beatae modi? Fugit odit iusto deserunt facere cumque sint animi eius nostrum vel, magnam exercitationem repellat? Ut?",
     date: new Date(),
     author: "Mr. CEO"
   });
