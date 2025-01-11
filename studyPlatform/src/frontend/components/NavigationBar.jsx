@@ -9,16 +9,15 @@ export default function NavigationBar() {
     <nav className="navbar">
       <div className="navbar-logo">VILO</div>
       <div className="navbar-tabs">
-        {/*<Link to="/home" className="navbar-tab">Home</Link> This does not work for some reason but would be better in any case. Fix it */}
-        <a href="/home" className="navbar-tab">Home</a>
-        <a href="/profile" className="navbar-tab">Profile</a>
-        <a href="/courses" className="navbar-tab">Courses</a>
-        <a href="/notes" className="navbar-tab">Notes</a>
-        <a href="/my-courses" className="navbar-tab">My Courses</a>
+        <Link to="/home" className="navbar-tab">Home</Link>
+        <Link to="/profile" className="navbar-tab">Profile</Link>
+        <Link to="/courses" className="navbar-tab">Courses</Link>
+        <Link to="/notes" className="navbar-tab">Notes</Link>
+        <Link to="/my-courses" className="navbar-tab">My Courses</Link>
       </div>
       <div className="navbar-right">
-        <input type="text" placeholder="Search" className="navbar-search"/>
-        <button className="navbar-login">Login</button>
+        <input type="text" placeholder="Search" className="navbar-search" />
+        <Link to="/login" className="navbar-login">Login</Link>
       </div>
     </nav>
   );
