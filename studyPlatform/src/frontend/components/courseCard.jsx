@@ -9,13 +9,13 @@ import CardMedia from "@mui/material/CardMedia";
 */}
 export default function CourseCard(){
     return(
-        <Card className='CourseCardComponent' sx={{width: '280px', height:'180px', backgroundColor:"#AC91E5", borderRadius:2}}>
+        <Card sx={{width: '280px', height:'180px', backgroundColor:"#AC91E5", borderRadius:2}}>
             <CardMedia
             sx={{height:'120px'}}
             image="/src/assets/courseCard_background.png"
             title="Mikrokontrollerit 1"
             />
-            <Typography gutterBottom variant='h5' component = "div" sx={{color:"black"}}>
+            <Typography gutterBottom variant='h5' component = "div" sx={{color:"white"}}>
             Mikrokontrollerit 1
             </Typography>
 

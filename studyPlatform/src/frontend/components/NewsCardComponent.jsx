@@ -20,7 +20,7 @@ const NewsCardHeader = styled('div')({
 
 const NewsCardComponent = ({ refCourse, newsTitle, message, date, author }) => {
     return (
-        <NewsCard className="NewsCardComponent">
+        <NewsCard>
             <NewsCardContent sx={{ backgroundColor: "#DBDBDB" }}>
                 <NewsCardHeader>
                     <Typography variant="subtitle1">
