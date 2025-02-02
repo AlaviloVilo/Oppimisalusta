@@ -1,5 +1,5 @@
 name: Run Tests on Push
-#This yml runs both selenium front-end tests and mocha database tests on push to main branch
+#This yml runs both selenium front-end tests and mocha database tests on push to main branch.
 on:
   push:
     branches:
@@ -27,7 +27,9 @@ jobs:
             npm install
 
         - name: Run tests
-          run: npm test
+          run: |
+            cd studyPlatform
+            npm test
     
     selenium-tests:
         runs-on: ubuntu-latest
