@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "start": "concurrently \"node app.js\" \"npm run dev\"",
     "test": "npm run test:database && npm run test:selenium",
-    "test:database": "mocha 'tests/database_tests/*.js' --timeout 5000",
-    "test:selenium": "mocha 'tests/selenium_tests/*.js' --timeout 10000"
+    "test:database": "mocha 'src/tests/database_tests/*.js' --timeout 5000",
+    "test:selenium": "mocha 'src/tests/selenium_tests/*.js' --timeout 10000"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
