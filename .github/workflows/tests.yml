@@ -22,7 +22,9 @@ jobs:
             node-version: '14'
        
         - name: Install dependencies
-          run: npm install
+          run: |
+            cd studyPlatform
+            npm install
 
         - name: Run tests
           run: npm test
@@ -40,12 +42,16 @@ jobs:
             node-version: '14'
         
         - name: Install dependencies
-          run: npm install
+          run: |
+            cd studyPlatform
+            npm install
 
         - name: Install Selenium Chrome WebDriver
           run: sudo apt-get install -y chromium-browser
   
         - name: Run Selenium tests
-          run: npm run test:selenium
+          run: |
+            cd studyPlatform
+            npm run test:selenium
 
             
