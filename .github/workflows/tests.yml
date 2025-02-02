@@ -1,0 +1,53 @@
+name: Run Tests on Push
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    database-tests:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Check out the repository
+          uses: actions/checkout@v4
+    
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '14'
+            cache: 'npm'
+
+        - name: Install dependencies
+          run: npm install
+
+        - name: Run tests
+          run: npm test
+    
+    selenium-tests:
+        runs-on: ubuntu-latest
+        
+        steps:
+        - name: Check out the repository
+          uses: actions/checkout@v4
+        
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '14'
+            cache: 'npm'
+        
+        - name: Install dependencies
+          run: npm install
+
+        - name: Install Selenium Chrome WebDriver
+          run: sudo apt-get install -y chromium-browser
+  
+        - name: Run Selenium tests
+          run: npm run test:selenium
+
+            

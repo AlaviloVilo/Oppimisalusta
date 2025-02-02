@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 import "../stylesheets/NavigationBar.css";
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 export default function NavigationBar() {
+
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   //console.log("rendering NavigationBar");
+  console.log('isAuthenticated:', isAuthenticated);
   return (
     <nav className="navbar">
       <div className="navbar-logo">VILO</div>
@@ -17,7 +22,8 @@ export default function NavigationBar() {
       </div>
       <div className="navbar-right">
         <input type="text" placeholder="Search" className="navbar-search" />
-        <Link to="/login" className="navbar-login">Login</Link>
+        {isAuthenticated ? <Button onClick={() => logout()}>Log Out</Button> : <Button onClick={loginWithRedirect}>Log In</Button>}
+
       </div>
     </nav>
   );
