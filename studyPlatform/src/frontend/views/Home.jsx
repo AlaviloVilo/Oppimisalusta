@@ -1,3 +1,5 @@
+
+import { useAuth0 } from "@auth0/auth0-react";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/footer";
 import { Box, Container, Button, TextField } from "@mui/material";
@@ -87,6 +89,8 @@ export default function Home() {
         };
         fetchCourses();
     }, []);
+
+    
 
     return (
         <>
@@ -188,9 +192,10 @@ export default function Home() {
                                 {courses.map((course, index) => (
                                     <Box
                                         key={index}
+                                        className="CourseCardComponent"
                                         sx={{
                                             width: '90%',
-                                            
+                                            color: '#000',
                                             padding: '3em',
                                             margin: '5px 0',
                                             backgroundColor: '#FFF',
