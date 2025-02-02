@@ -1,5 +1,6 @@
-import { Builder, By, until, Browser } from 'selenium-webdriver';
+import { Builder, By, until, Browser, Key } from 'selenium-webdriver';
 import assert from "assert";
+import { title } from 'process';
 
 
 (async function testLogin() {
@@ -9,10 +10,13 @@ import assert from "assert";
 
     try {
         // Navigate to your application's home page
-        await driver.get('http://localhost:5173');
+        await driver.get('http://localhost:5173/home');
 
         // Wait for the page to load
-        await driver.wait(until.titleIs('Your Page Title'), 5000); // Replace with your page's title
+
+        let title = await driver.getTitle();
+        console.log('title is: ' + title);
+        await driver.wait(until.titleIs('Vite + React'), 5000); 
 
         // Check if the navigation bar is present
         let navBar = await driver.findElement(By.tagName('nav'));
@@ -36,15 +40,18 @@ import assert from "assert";
             assert(button !== null, `Button with label ${label} is not present`);
         }
 
+        await driver.wait(until.elementsLocated(By.className('NewsCardComponent')), 10000);
+
         // Check that the news cards are displayed
         let newsCards = await driver.findElements(By.className('NewsCardComponent')); // Adjust the class name if needed
+        console.log('num of cards: ' + newsCards.length);
         assert(newsCards.length > 0, 'No news cards found');
 
         // Verify the enrolled courses section
         let enrolledCoursesHeader = await driver.findElement(By.xpath("//h3[text()='Enrolled Courses']"));
         assert(enrolledCoursesHeader !== null, 'Enrolled Courses header is missing');
 
-        let enrolledCourses = await driver.findElements(By.xpath("//h3[text()='Enrolled Courses']/following-sibling::div/div"));
+        let enrolledCourses = await driver.findElements(By.className("CourseCardComponent"));
         assert(enrolledCourses.length > 0, 'No enrolled courses found');
 
         console.log('All tests passed successfully!');
