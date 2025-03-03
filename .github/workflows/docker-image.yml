@@ -1,12 +1,14 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main  # Change this to your default branch
+  workflow_run:
+    workflows: ["Run Tests on Push"]
+    types:
+      - completed
 
 jobs:
   build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
