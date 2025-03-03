@@ -1,4 +1,3 @@
-
 import { Box, List, ListItem, ListItemText, Divider } from '@mui/material';
 
 export default function SideNav() {
@@ -18,7 +17,7 @@ export default function SideNav() {
       <List component="nav">
       <ListItem button>
           <ListItemText 
-            primary="Course content" 
+            primary="Kurssit" 
             primaryTypographyProps={{
               fontWeight: 'bold',
               fontSize: '1.2rem', 
@@ -27,17 +26,17 @@ export default function SideNav() {
         
         <Divider />
         <ListItem button>
-          <ListItemText primary="Section 1" />
+          <ListItemText primary="Kurssi 1" />
         </ListItem>
         <Divider />
         <ListItem button>
-          <ListItemText primary="Section 2" />
+          <ListItemText primary="Kurssi 2" />
         </ListItem>
         <Divider />
         <ListItem button>
-          <ListItemText primary="Section 3" />
+          <ListItemText primary="Kurssi 3" />
         </ListItem>
       </List>
     </Box>
   );
-}
+} 

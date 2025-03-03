@@ -31,8 +31,10 @@
     "mongoose": "^8.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^6.28.0",
     "selenium-webdriver": "^4.23.0",
+    "studyplatform": "file:",
     "vite-express": "^0.16.0"
   },
   "devDependencies": {

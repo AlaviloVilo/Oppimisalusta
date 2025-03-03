@@ -12,6 +12,7 @@ import Notes from './frontend/views/Notes';
 import MyCourses from './frontend/views/MyCourses';
 import { Auth0Provider } from '@auth0/auth0-react';
 import AuthCallback from './frontend/components/authcallBack';
+import VideoView from './frontend/views/VideoViewScreen';
 
 
 
