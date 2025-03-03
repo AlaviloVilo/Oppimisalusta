@@ -22,6 +22,7 @@ export default function NavigationBar() {
       </div>
       <div className="navbar-right">
         <input type="text" placeholder="Search" className="navbar-search" />
+        <p>lol</p>
         {isAuthenticated ? <Button onClick={() => logout()}>Log Out</Button> : <Button onClick={loginWithRedirect}>Log In</Button>}
 
       </div>
