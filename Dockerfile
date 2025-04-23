@@ -15,6 +15,8 @@ RUN chgrp -R 0 /app \
 # 4. Copy only your package manifests and install deps
 COPY studyPlatform/package*.json ./
 RUN npm install --unsafe-perm
+RUN npm install react-player --unsafe-perm
+
 
 # 5. Copy the rest of your code
 COPY studyPlatform/ ./
