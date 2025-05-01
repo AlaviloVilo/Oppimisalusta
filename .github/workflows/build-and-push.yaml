@@ -1,0 +1,30 @@
+name: Build and Push to OpenShift
+
+on:
+  push:
+    branches:
+      - main  # Change to your deployment branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to OpenShift Image Registry
+      run: |
+        echo "sha256~Jssd6IG74soRI2zXnGSWR9bPVf62H9rQgQkpKMCo0gY" | \
+        docker login image-registry.openshift-image-registry.svc:5000 \
+        -u epuutone@student.oulu.fi --password-stdin
+
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t image-registry.openshift-image-registry.svc:5000/epuutone20-dev/oppimisalusta-git:latest .
+        docker push image-registry.openshift-image-registry.svc:5000/epuutone20-dev/oppimisalusta-git:latest
+
+
