@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oppimisalusta-image-2
+  namespace: epuutone20-dev
+  labels:
+    app: oppimisalusta-image-2
+    app.kubernetes.io/component: oppimisalusta-image-2
+    app.kubernetes.io/instance: oppimisalusta-image-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: oppimisalusta-image-2
+  template:
+    metadata:
+      labels:
+        deployment: oppimisalusta-image-2
+    spec:
+      containers:
+        - name: oppimisalusta-image-2
+          image: image-registry.openshift-image-registry.svc:5000/epuutone20-dev/oppimisalusta-image-2
+          ports:
+            - containerPort: 5173
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
