@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: oppimisalusta-image-2
+  namespace: epuutone20-dev  
+  labels:
+    app: oppimisalusta-image-2
+    app.kubernetes.io/component: oppimisalusta-image-2
+    app.kubernetes.io/instance: oppimisalusta-image-2
+  annotations:
+    openshift.io/host.generated: 'true'  
+spec:
+  host: oppimisalusta-image-2-epuutone20-dev.apps.rm1.0a51.p1.openshiftapps.com 
+  to:
+    kind: Service
+    name: oppimisalusta-image-2
+    weight: 100
+  port:
+    targetPort: 5173-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
