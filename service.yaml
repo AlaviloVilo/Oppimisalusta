@@ -8,11 +8,7 @@ spec:
   selector:
     deployment: oppimisalusta-image-2
   ports:
-    - name: http
-      protocol: TCP
-      port: 3000
-      targetPort: 3000
-    - name: dev
+    - name: 5173-tcp
       protocol: TCP
       port: 5173
       targetPort: 5173
